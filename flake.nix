@@ -87,6 +87,7 @@
 				home.packages = [
 					pkgs.bat
 					pkgs.slack
+					pkgs.teams
 				];
 				programs.git = {
 					enable = true;
