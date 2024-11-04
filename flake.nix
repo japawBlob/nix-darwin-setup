@@ -52,7 +52,12 @@
 };	
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
-
+	system.defaults.WindowManager.EnableStandardClickToShowDesktop = false;
+	system.defaults.WindowManager.StandardHideDesktopIcons = false;
+	system.defaults.dock.autohide = true;
+	system.defaults.dock.autohide-delay = 0.0;
+	system.defaults.dock.autohide-time-modifier = 0.001;
+	system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
