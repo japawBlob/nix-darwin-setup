@@ -16,6 +16,7 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ pkgs.vim
+  	  pkgs.coreutils
         ];
 
       # Auto upgrade nix package and the daemon service.
@@ -30,12 +31,19 @@
       nix.settings.experimental-features = "nix-command flakes";
 
 	system.keyboard = {
-		nonUS.remapTilde = true;
 		enableKeyMapping = true;
 		swapLeftCtrlAndFn = true;
 	};
-	
 
+	homebrew = {
+		enable = true;
+		caskArgs.no_quarantine = true;
+		global.brewfile = true;
+		masApps = {};
+		casks = [
+			"firefox"
+		];
+};	
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
 
