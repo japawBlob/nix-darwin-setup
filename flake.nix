@@ -29,6 +29,13 @@
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
+	system.keyboard = {
+		nonUS.remapTilde = true;
+		enableKeyMapping = true;
+		swapLeftCtrlAndFn = true;
+	};
+	
+
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
 
