@@ -18,6 +18,8 @@
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
+      nixpkgs.config.allowUnfree = true;
+
       environment.systemPackages =
         [ pkgs.vim
   	  pkgs.coreutils
@@ -79,6 +81,7 @@
 				programs.home-manager.enable = true;
 				home.packages = [
 					pkgs.bat
+					pkgs.slack
 				];
 				programs.git = {
 					enable = true;
