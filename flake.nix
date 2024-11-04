@@ -49,7 +49,15 @@
 		casks = [
 			"firefox"
 		];
-};	
+	};	
+	fonts.packages = with pkgs; [
+		(nerdfonts.override {
+			fonts = [
+				"JetBraninMono"
+				"CascadiaCode"
+			];
+		}
+	]
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
 	system.defaults.WindowManager.EnableStandardClickToShowDesktop = false;
@@ -58,6 +66,7 @@
 	system.defaults.dock.autohide-delay = 0.0;
 	system.defaults.dock.autohide-time-modifier = 0.001;
 	system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
+	security.pam.enableSudoTouchIdAuth = true;
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
@@ -102,8 +111,14 @@
 							ublock-origin
 							bitwarden
 							vimium
+							darkreader
+							simple-tab-groups
 						];
 					};
+				};
+				programs.wezterm = {
+					enable = true;
+					enableZshIntegration = true;
 				};
 			};
 		}	
