@@ -7,6 +7,10 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
@@ -67,6 +71,7 @@
 		{
 			home-manager.useGlobalPkgs = true;
 			home-manager.useUserPackages = true;
+			home-manager.backupFileExtension = "nix-backup";
 			home-manager.users.jakub-jira = {config, pkgs, ...}:{
 				home.username = "jakub-jira";
 				home.homeDirectory = "/Users/jakub-jira";
@@ -77,6 +82,19 @@
 				];
 				programs.git = {
 					enable = true;
+				};
+				programs.firefox = {
+					enable = true;					
+					package = null;
+					profiles.jakub = {
+						isDefault = true;
+						search.default = "DuckDuckGo";
+						extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+							ublock-origin
+							bitwarden
+							vimium
+						];
+					};
 				};
 			};
 		}	
