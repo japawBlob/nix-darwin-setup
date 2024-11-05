@@ -53,11 +53,11 @@
 	fonts.packages = with pkgs; [
 		(nerdfonts.override {
 			fonts = [
-				"JetBraninMono"
+				"JetBrainsMono"
 				"CascadiaCode"
 			];
-		}
-	]
+		})
+	];
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
 	system.defaults.WindowManager.EnableStandardClickToShowDesktop = false;
@@ -97,6 +97,7 @@
 					pkgs.bat
 					pkgs.slack
 					pkgs.teams
+					pkgs.fzf
 				];
 				programs.git = {
 					enable = true;
@@ -119,6 +120,14 @@
 				programs.wezterm = {
 					enable = true;
 					enableZshIntegration = true;
+					extraConfig = ''
+						local wezterm = require 'wezterm'
+						local config = wezterm.config_builder()
+						config.font = wezterm.font("CaskaydiaCove Nerd Font")
+						config.front_end = "WebGpu"
+						config.color_scheme = 'AdventureTime'
+						return config
+					'';
 				};
 			};
 		}	
