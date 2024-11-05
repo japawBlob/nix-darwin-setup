@@ -20,3 +20,14 @@ After that is succesfully done, you can use the regular
 darwin-rebuild switch --flake ~/.config/nix-darwin
 ```
 
+# TODO:
+ - add ```defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false              # For VS Code``` and Key Repeat and Delay Until Repeat
+ - Karabiner modify keyboard
+ - Install and setup Aerospace for window-management
+ - Install alternative for spotligh
+ - Install better top-bar
+ - Setup wezterm
+ - Install and setup oh-my-zsh
+ - Install and setup vifm 
+ - Add aliases for editing and rebuilding nix-darwin
+ 
