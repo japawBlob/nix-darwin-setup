@@ -24,7 +24,9 @@
         [ pkgs.vim
   	  pkgs.coreutils
         ];
-
+	environment.systemPath = [
+		"/opt/homebrew/bin"
+	];
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
       # nix.package = pkgs.nix;
