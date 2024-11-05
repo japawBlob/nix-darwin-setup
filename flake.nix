@@ -98,6 +98,7 @@
 					pkgs.slack
 					pkgs.teams
 					pkgs.fzf
+					pkgs.wget
 				];
 				programs.git = {
 					enable = true;
