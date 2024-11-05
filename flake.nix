@@ -108,7 +108,6 @@
 					package = null;
 					profiles.jakub = {
 						isDefault = true;
-						search.default = "DuckDuckGo";
 						extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
 							ublock-origin
 							bitwarden
