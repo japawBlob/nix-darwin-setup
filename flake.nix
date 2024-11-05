@@ -101,7 +101,10 @@
 					pkgs.teams
 					pkgs.fzf
 					pkgs.wget
+					pkgs.vscode
+					(pkgs.python3.withPackages (ppkgs: [ppkgs.matplotlib]))
 				];
+				
 				programs.git = {
 					enable = true;
 				};
