@@ -66,8 +66,13 @@
 	system.defaults.WindowManager.StandardHideDesktopIcons = false;
 	system.defaults.dock.autohide = true;
 	system.defaults.dock.autohide-delay = 0.0;
-	system.defaults.dock.autohide-time-modifier = 0.001;
-	system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
+	system.defaults.dock.autohide-time-modifier = 0.3;
+	system.defaults.NSGlobalDomain = {
+		"com.apple.swipescrolldirection" = false;
+		ApplePressAndHoldEnabled = false;
+		InitialKeyRepeat = 14;
+		KeyRepeat = 1;
+	};
 	security.pam.enableSudoTouchIdAuth = true;
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
