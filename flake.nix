@@ -112,6 +112,11 @@
 				
 				programs.git = {
 					enable = true;
+					aliases = {
+						csm = "commit -s -m";
+						cm = "commit -m";
+					};
+					
 				};
 				programs.firefox = {
 					enable = true;					
@@ -141,6 +146,12 @@
 				};
 				programs.lazygit = {
 					enable = true;
+				};
+				programs.zsh = {
+					enable = true;
+					shellAliases = {
+						drs = "darwin-rebuild switch --flake ~/.config/nix-darwin";
+					};
 				};
 			};
 		}	
