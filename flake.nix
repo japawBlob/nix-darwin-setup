@@ -99,11 +99,10 @@
 				home.packages = [
 					pkgs.bat
 					pkgs.slack
-					pkgs.teams
 					pkgs.fzf
 					pkgs.wget
 					pkgs.vscode
-					(pkgs.python3.withPackages (ppkgs: [ppkgs.matplotlib]))
+					(pkgs.python3.withPackages (ppkgs: with ppkgs; [matplotlib]))
 				];
 				
 				programs.git = {
@@ -112,6 +111,8 @@
 						csm = "commit -s -m";
 						cm = "commit -m";
 					};
+					userEmail = "jakub.jira@turbonext.com";
+					userName = "Jakub Jíra";
 					
 				};
 				programs.firefox = {
