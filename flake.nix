@@ -115,6 +115,9 @@
 					userName = "Jakub Jíra";
 					
 				};
+				programs.poetry = {
+					enable = true;
+				};
 				programs.firefox = {
 					enable = true;					
 					package = null;
@@ -138,6 +141,7 @@
 						config.font = wezterm.font("CaskaydiaCove Nerd Font")
 						config.front_end = "WebGpu"
 						config.color_scheme = 'AdventureTime'
+						config.window_decorations = "RESIZE"
 						return config
 					'';
 				};
@@ -147,8 +151,9 @@
 				programs.zsh = {
 					enable = true;
 					shellAliases = {
-						drs = "darwin-rebuild switch --flake ~/.config/nix-darwin";
-					};
+						dwrs = "darwin-rebuild switch --flake ~/.config/nix-darwin";
+						dwe = "vim ~/.config/nix-darwin/";
+					}; 
 				};
 			};
 		}	
