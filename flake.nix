@@ -143,7 +143,7 @@
 						local config = wezterm.config_builder()
 						config.font = wezterm.font("CaskaydiaCove Nerd Font")
 						config.front_end = "WebGpu"
-						config.color_scheme = 'AdventureTime'
+						config.color_scheme = 'Dark Pastel (Gogh)'
 						config.window_decorations = "RESIZE"
 						return config
 					'';
