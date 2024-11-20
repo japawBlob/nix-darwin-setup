@@ -7,13 +7,14 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";	
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, ... }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -21,7 +22,9 @@
       nixpkgs.config.allowUnfree = true;
 
       environment.systemPackages =
-        [ pkgs.vim
+        [ 
+	  pkgs.vim
+	  pkgs.slack
   	  pkgs.coreutils
         ];
 	environment.systemPath = [
@@ -49,6 +52,7 @@
 		casks = [
 			"firefox"
 			"maccy"
+			"github"
 		];
 	};	
 	fonts.packages = with pkgs; [
@@ -72,6 +76,9 @@
 		InitialKeyRepeat = 14;
 		KeyRepeat = 1;
 	};
+	system.activationScripts.extraActivation.text = ''
+		softwareupdate --install-rosetta --agree-to-license
+	'';
 	security.pam.enableSudoTouchIdAuth = true;
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -101,11 +108,13 @@
 				programs.home-manager.enable = true;
 				home.packages = [
 					pkgs.bat
-					pkgs.slack
 					pkgs.fzf
 					pkgs.wget
 					pkgs.vscode
-					(pkgs.python3.withPackages (ppkgs: with ppkgs; [matplotlib]))
+					(pkgs.python3.withPackages (ppkgs: with ppkgs; [
+						matplotlib 
+						torch
+					]))
 				];
 				
 				programs.git = {
@@ -160,6 +169,18 @@
 				};
 			};
 		}	
+		nix-homebrew.darwinModules.nix-homebrew
+		{
+			nix-homebrew = {
+				enable = true;
+				# Apple Silicon Only
+				enableRosetta = true;
+				# User owning the Homebrew prefix
+				user = "jakub-jira";
+
+				autoMigrate = true;
+			};
+		}
 	];
     };
 
