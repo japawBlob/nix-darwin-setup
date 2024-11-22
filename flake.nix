@@ -110,6 +110,7 @@
 				programs.home-manager.enable = true;
 				home.packages = [
 					pkgs.bat
+					pkgs.ripgrep
 					pkgs.fzf
 					pkgs.wget
 					pkgs.vscode
