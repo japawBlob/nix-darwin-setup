@@ -78,9 +78,6 @@
 		InitialKeyRepeat = 14;
 		KeyRepeat = 1;
 	};
-	system.activationScripts.extraActivation.text = ''
-		softwareupdate --install-rosetta --agree-to-license
-	'';
 	security.pam.enableSudoTouchIdAuth = true;
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
