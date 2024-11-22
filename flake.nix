@@ -111,6 +111,7 @@
 					pkgs.fzf
 					pkgs.wget
 					pkgs.vscode
+					pkgs.neovim
 					(pkgs.python3.withPackages (ppkgs: with ppkgs; [
 						matplotlib 
 						torch
