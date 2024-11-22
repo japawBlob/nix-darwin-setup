@@ -47,6 +47,9 @@
 		enable = true;
 		caskArgs.no_quarantine = true;
 		global.brewfile = true;
+		global.autoUpdate = false;
+		onActivation.upgrade = true;
+		onActivation.autoUpdate = true;
 		onActivation.cleanup = "zap";
 		masApps = {};
 		brews = [
