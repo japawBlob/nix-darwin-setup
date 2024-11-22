@@ -68,15 +68,18 @@
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
 	system.defaults.WindowManager.EnableStandardClickToShowDesktop = false;
-	system.defaults.WindowManager.StandardHideDesktopIcons = false;
+	system.defaults.WindowManager.StandardHideDesktopIcons = true;
 	system.defaults.dock.autohide = true;
 	system.defaults.dock.autohide-delay = 0.0;
 	system.defaults.dock.autohide-time-modifier = 0.3;
 	system.defaults.NSGlobalDomain = {
-		"com.apple.swipescrolldirection" = false;
 		ApplePressAndHoldEnabled = false;
 		InitialKeyRepeat = 14;
 		KeyRepeat = 1;
+		"com.apple.mouse.tapBehavior" = 1;
+		"com.apple.keyboard.fnState" = true;
+		"com.apple.swipescrolldirection" = false;
+		"com.apple.trackpad.scaling" = 1.0;
 	};
 	security.pam.enableSudoTouchIdAuth = true;
       # Set Git commit hash for darwin-version.
