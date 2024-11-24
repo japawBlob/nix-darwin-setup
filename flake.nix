@@ -172,6 +172,7 @@
 							vimium
 							darkreader
 							simple-tab-groups
+							youtube-nonstop
 						];
 					};
 				};
