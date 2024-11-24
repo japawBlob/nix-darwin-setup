@@ -118,9 +118,11 @@
   in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#Jakubs-MacBook-Pro
-    darwinConfigurations."Jakubs-MacBook-Pro" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration 
+    # $ darwin-rebuild build --flake .#tn-macbook
+    darwinConfigurations."tn-macbook" = nix-darwin.lib.darwinSystem {
+	system = "aarch64-darwin";
+	modules = [ 
+		configuration 
 		home-manager.darwinModules.home-manager
 		{
 			home-manager.useGlobalPkgs = true;
@@ -190,7 +192,7 @@
 				programs.zsh = {
 					enable = true;
 					shellAliases = {
-						dwrs = "darwin-rebuild switch --flake ~/.config/nix-darwin";
+						dwrs = "darwin-rebuild switch --flake ~/.config/nix-darwin#tn-macbook";
 						dwe = "vim ~/.config/nix-darwin/";
 					}; 
 				};
@@ -212,6 +214,6 @@
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."Jakubs-MacBook-Pro".pkgs;
+    darwinPackages = self.darwinConfigurations."tn-macbook".pkgs;
   };
 }
