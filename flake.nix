@@ -89,6 +89,7 @@
 	system.defaults.dock.tilesize = 64;
 	system.defaults.dock.persistent-apps = [
 		"/System/Applications/Launchpad.app"
+		"/System/Applications/System Settings.app"
 		"${pkgs.wezterm}/Applications/WezTerm.app"
 		"/Applications/Firefox.app"
 		"${pkgs.vscode}/Applications/Visual Studio Code.app"
