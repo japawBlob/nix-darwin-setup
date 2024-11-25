@@ -75,6 +75,8 @@
       # programs.fish.enable = true;
 	system.defaults.WindowManager.EnableStandardClickToShowDesktop = false;
 	system.defaults.WindowManager.StandardHideDesktopIcons = true;
+	system.defaults.trackpad.FirstClickThreshold = 0;
+	system.defaults.trackpad.ActuationStrength = 0;
 	system.defaults.dock.autohide = true;
 	system.defaults.dock.autohide-delay = 0.0;
 	system.defaults.dock.autohide-time-modifier = 0.3;
@@ -82,6 +84,17 @@
 	system.defaults.dock.wvous-br-corner = 1;
 	system.defaults.dock.wvous-tl-corner = 1;
 	system.defaults.dock.wvous-tr-corner = 1;
+	system.defaults.dock.orientation = "left";
+	system.defaults.dock.show-recents = false;
+	system.defaults.dock.tilesize = 64;
+	system.defaults.dock.persistent-apps = [
+		"/System/Applications/Launchpad.app"
+		"${pkgs.wezterm}/Applications/WezTerm.app"
+		"/Applications/Firefox.app"
+		"${pkgs.vscode}/Applications/Visual Studio Code.app"
+		"/Applications/Microsoft Teams.app"	
+		"${pkgs.slack}/Applications/Slack.app"
+	];
 	system.defaults.finder.CreateDesktop = false;
 	system.defaults.finder.AppleShowAllExtensions = true;
 	system.defaults.finder.AppleShowAllFiles = true;
@@ -98,7 +111,7 @@
 		"com.apple.mouse.tapBehavior" = 1;
 		"com.apple.keyboard.fnState" = true;
 		"com.apple.swipescrolldirection" = false;
-		"com.apple.trackpad.scaling" = 1.0;
+		"com.apple.trackpad.scaling" = 2.0;
 	};
 	security.pam.enableSudoTouchIdAuth = true;
       # Set Git commit hash for darwin-version.
