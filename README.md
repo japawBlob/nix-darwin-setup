@@ -26,8 +26,18 @@ darwin-rebuild switch --flake ~/.config/nix-darwin
  - Install and setup Aerospace for window-management
  - Install alternative for spotligh
  - Install better top-bar
- - Setup wezterm
  - Install and setup oh-my-zsh
  - Install and setup vifm 
- - Add aliases for editing and rebuilding nix-darwin
- 
+
+# Need to do manually:
+ - Firefox needs to start first, before applying configuration from home-manager
+ - Firefox does not transfer bookmarks - maybe use standalone firefox accnout for once? - can be done by tranfering flavicons.sqlite and places.sqlite to ~/Library/Application Support/Firefox/profiles/<profile name>
+ - Need to rewrite the name to the current account name in the flake
+ - VSCode also needs some setup
+ - Multi-monitor setup make the external monitor primary one
+ - Set background to plane black + accents to gray
+ - Generate SSH key + transfer key from old pc
+ - Install KDEConnect, Teams, Messenger
+ - Set UI scale both on laptop and external monitor
+ - Set Teams, Slack, KDEConnect to be startup apps
+ - Vimium setup
