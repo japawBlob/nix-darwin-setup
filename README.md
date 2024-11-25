@@ -41,3 +41,4 @@ darwin-rebuild switch --flake ~/.config/nix-darwin
  - Set UI scale both on laptop and external monitor
  - Set Teams, Slack, KDEConnect to be startup apps
  - Vimium setup
+ - Set tiled windows to not have margins
