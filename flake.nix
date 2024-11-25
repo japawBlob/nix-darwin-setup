@@ -27,6 +27,8 @@
 	  pkgs.mkalias
 	  pkgs.slack
   	  pkgs.coreutils
+	  pkgs.vscode
+	  pkgs.wezterm
         ];
 	environment.systemPath = [
 		"/opt/homebrew/bin"
@@ -151,7 +153,6 @@
 					pkgs.ripgrep
 					pkgs.fzf
 					pkgs.wget
-					pkgs.vscode
 					pkgs.neovim
 					(pkgs.python3.withPackages (ppkgs: with ppkgs; [
 						matplotlib 
