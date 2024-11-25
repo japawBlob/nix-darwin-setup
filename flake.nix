@@ -34,9 +34,9 @@
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
       # nix.package = pkgs.nix;
-	users.users.jakub-jira = {
-	name = "jakub-jira";
-	home = "/Users/jakub-jira";
+	users.users.japaw = {
+	name = "japaw";
+	home = "/Users/japaw";
 	};
 
       # Necessary for using flakes on this system.
@@ -141,9 +141,9 @@
 			home-manager.useGlobalPkgs = true;
 			home-manager.useUserPackages = true;
 			home-manager.backupFileExtension = "nix-backup";
-			home-manager.users.jakub-jira = {config, pkgs, ...}:{
-				home.username = "jakub-jira";
-				home.homeDirectory = "/Users/jakub-jira";
+			home-manager.users.japaw = {config, pkgs, ...}:{
+				home.username = "japaw";
+				home.homeDirectory = "/Users/japaw";
 				home.stateVersion = "24.05";
 				programs.home-manager.enable = true;
 				home.packages = [
@@ -175,7 +175,7 @@
 				programs.firefox = {
 					enable = true;					
 					package = null;
-					profiles.jakub = {
+					profiles.japaw = {
 						isDefault = true;
 						extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
 							ublock-origin
@@ -219,7 +219,7 @@
 				# Apple Silicon Only
 				enableRosetta = true;
 				# User owning the Homebrew prefix
-				user = "jakub-jira";
+				user = "japaw";
 
 				autoMigrate = true;
 			};
