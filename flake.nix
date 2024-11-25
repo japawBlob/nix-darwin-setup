@@ -8,15 +8,13 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";	
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
-    determinate.inputs.nixpkgs.follows = "nixpkgs";
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, firefox-addons, determinate }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, firefox-addons}:
   let
     configuration = { pkgs, config,... }: {
       # List packages installed in system profile. To search by name, run:
@@ -226,7 +224,6 @@
 				autoMigrate = true;
 			};
 		}
-		determinate.darwinModules.default
 	];
     };
 
