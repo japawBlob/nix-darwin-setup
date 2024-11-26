@@ -226,6 +226,10 @@
 						dwe = "vim ~/.config/nix-darwin/";
 					}; 
 				};
+				programs.zoxide = {
+					enable = true;
+					enableZshIntegration = true;
+				};
 			};
 		}	
 		nix-homebrew.darwinModules.nix-homebrew
