@@ -92,6 +92,7 @@
 		"/System/Applications/System Settings.app"
 		"${pkgs.wezterm}/Applications/WezTerm.app"
 		"/Applications/Firefox.app"
+		"/Applications/Messenger.app"
 		"${pkgs.vscode}/Applications/Visual Studio Code.app"
 		"/Applications/Microsoft Teams.app"	
 		"${pkgs.slack}/Applications/Slack.app"

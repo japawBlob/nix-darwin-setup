@@ -42,3 +42,5 @@ darwin-rebuild switch --flake ~/.config/nix-darwin
  - Set Teams, Slack, KDEConnect to be startup apps
  - Vimium setup
  - Set tiled windows to not have margins
+ - Give wezterm full disk access in Privacy & Security -> Full Disk Access
+ - Allow kdeconnect to be run as app from an unknown developer
