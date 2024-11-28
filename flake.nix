@@ -61,6 +61,7 @@
 			"firefox"
 			"maccy"
 			"github"
+			"simplenote"
 		];
 	};	
 	fonts.packages = with pkgs; [
