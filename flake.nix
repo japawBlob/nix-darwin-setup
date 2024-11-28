@@ -65,12 +65,8 @@
 		];
 	};	
 	fonts.packages = with pkgs; [
-		(nerdfonts.override {
-			fonts = [
-				"JetBrainsMono"
-				"CascadiaCode"
-			];
-		})
+		nerd-fonts.jetbrains-mono
+		nerd-fonts.caskaydia-cove
 	];
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
