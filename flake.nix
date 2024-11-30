@@ -187,6 +187,10 @@
 					userName = "Jakub Jíra";
 					
 				};
+				programs.ssh = {
+					enable = true;
+					addKeysToAgent = "yes";
+				};
 				programs.poetry = {
 					enable = true;
 				};
