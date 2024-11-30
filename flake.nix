@@ -107,6 +107,7 @@
 		InitialKeyRepeat = 14;
 		KeyRepeat = 1;
 		AppleTemperatureUnit = "Celsius";
+		NSWindowShouldDragOnGesture = true;
 		"com.apple.mouse.tapBehavior" = 1;
 		"com.apple.keyboard.fnState" = true;
 		"com.apple.swipescrolldirection" = false;
@@ -160,6 +161,9 @@
 				home.homeDirectory = "/Users/japaw";
 				home.stateVersion = "24.05";
 				programs.home-manager.enable = true;
+				home.sessionVariables = {
+					EDITOR="nvim";
+				};
 				home.packages = [
 					pkgs.bat
 					pkgs.ripgrep
