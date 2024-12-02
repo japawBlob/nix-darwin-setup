@@ -1,6 +1,12 @@
 # This is my basic Nix-Darwin setup
 
-This is my basic darwin-nix install. Feel free to use it - you just need to change my name "jakub-jira" and my devices name "Jakubs-MacBook-Pro" to match your device.
+This is my basic darwin-nix install. Feel free to use it - you just need to change my user name "japaw" to yours and some personal credentials like name and email.
+
+## What is the Nix?
+
+The nix is package manager originally aimed ad Linux, that provides a way to create a declarative and deterministic developement environments. There is a little mess in the nix world and the learning curve can be quite steep. If you are interested I would suggest starting to manage your cli tools with nix and get the look and feel of it and maybe check some guides like [Zero to Nix](https://zero-to-nix.com/) or [nice youtube video by Dreams of Autonomy](https://www.youtube.com/watch?v=Z8BL8mdzWHI)
+
+## How to install?
 
 Instal nix using determinate systems installer:
 
@@ -12,16 +18,15 @@ Clone the repository into ~/.config/nix-darwin
 
 And the first time you run the config you need to run
 ```
-nix run nix-darwin -- switch --flake ~/.config/nix-darwin
+nix run nix-darwin -- switch --flake ~/.config/nix-darwin#tn-macbook
 ```
 
 After that is succesfully done, you can use the regular 
 ```
-darwin-rebuild switch --flake ~/.config/nix-darwin
+darwin-rebuild switch --flake ~/.config/nix-darwin#tn-macbook
 ```
 
-# TODO:
- - add ```defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false              # For VS Code``` and Key Repeat and Delay Until Repeat
+## TODO:
  - Karabiner modify keyboard
  - Install and setup Aerospace for window-management
  - Install alternative for spotligh
@@ -29,10 +34,9 @@ darwin-rebuild switch --flake ~/.config/nix-darwin
  - Install and setup oh-my-zsh
  - Install and setup vifm 
 
-# Need to do manually:
+## Need to do manually:
  - Firefox needs to start first, before applying configuration from home-manager
  - Firefox does not transfer bookmarks - maybe use standalone firefox accnout for once? - can be done by tranfering flavicons.sqlite and places.sqlite to ~/Library/Application Support/Firefox/profiles/<profile name>
- - Need to rewrite the name to the current account name in the flake
  - VSCode also needs some setup
  - Multi-monitor setup make the external monitor primary one
  - Set background to plane black + accents to gray
