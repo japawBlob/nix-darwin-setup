@@ -62,6 +62,10 @@
 			"maccy"
 			"github"
 			"simplenote"
+			"prusaslicer"
+			"whatsapp"
+			"proton-drive"
+			"proton-mail"
 		];
 	};	
 	fonts.packages = with pkgs; [
