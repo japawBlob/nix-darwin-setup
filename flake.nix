@@ -66,6 +66,8 @@
 			"whatsapp"
 			"proton-drive"
 			"proton-mail"
+			"karabiner-elements"
+			"hammerspoon"
 		];
 	};	
 	fonts.packages = with pkgs; [
