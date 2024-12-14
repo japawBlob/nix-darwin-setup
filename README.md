@@ -48,3 +48,4 @@ darwin-rebuild switch --flake ~/.config/nix-darwin#tn-macbook
  - Set tiled windows to not have margins
  - Give wezterm full disk access in Privacy & Security -> Full Disk Access
  - Allow kdeconnect to be run as app from an unknown developer
+ - Install npm package ```$ npm install --global cdktf-cli@0.20.9``` the package in the nixpkgs is outdated

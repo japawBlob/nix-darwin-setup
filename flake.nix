@@ -54,8 +54,14 @@
 		onActivation.autoUpdate = true;
 		onActivation.cleanup = "zap";
 		masApps = {};
+		taps = [
+			"hashicorp/tap"
+		];
 		brews = [
 			"mas"
+			"terraform"
+			"node"
+			"azure-cli"
 		];
 		casks = [
 			"firefox"
@@ -167,8 +173,12 @@
 				home.homeDirectory = "/Users/japaw";
 				home.stateVersion = "24.05";
 				programs.home-manager.enable = true;
+				home.sessionPath = [
+					"$PYENV_ROOT/bin"
+				];
 				home.sessionVariables = {
 					EDITOR="nvim";
+					PYENV_ROOT="$HOME/.pyenv";
 				};
 				home.packages = [
 					pkgs.bat
@@ -177,9 +187,11 @@
 					pkgs.wget
 					pkgs.neovim
 					pkgs.btop
+					pkgs.pyenv
 					(pkgs.python3.withPackages (ppkgs: with ppkgs; [
 						matplotlib 
 						torch
+						pytest
 					]))
 				];
 				
