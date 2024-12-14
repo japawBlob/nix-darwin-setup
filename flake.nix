@@ -74,6 +74,7 @@
 			"proton-mail"
 			"karabiner-elements"
 			"hammerspoon"
+			"onlyoffice"
 		];
 	};	
 	fonts.packages = with pkgs; [
@@ -105,6 +106,7 @@
 		"${pkgs.vscode}/Applications/Visual Studio Code.app"
 		"/Applications/Microsoft Teams.app"	
 		"${pkgs.slack}/Applications/Slack.app"
+		"/Applications/Simplenote.app"
 	];
 	system.defaults.finder.CreateDesktop = false;
 	system.defaults.finder.AppleShowAllExtensions = true;
@@ -188,6 +190,8 @@
 					pkgs.neovim
 					pkgs.btop
 					pkgs.pyenv
+					pkgs.eza
+					pkgs.vifm
 					(pkgs.python3.withPackages (ppkgs: with ppkgs; [
 						matplotlib 
 						torch
