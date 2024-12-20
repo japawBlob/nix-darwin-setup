@@ -243,6 +243,8 @@
 						config.front_end = "WebGpu"
 						config.color_scheme = 'Dark Pastel (Gogh)'
 						config.window_decorations = "RESIZE"
+						config.initial_cols = 160
+						config.initial_rows = 48
 						return config
 					'';
 				};
