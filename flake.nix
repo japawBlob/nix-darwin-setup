@@ -75,6 +75,8 @@
 			"karabiner-elements"
 			"hammerspoon"
 			"onlyoffice"
+			"libreoffice"
+			"vlc"
 		];
 	};	
 	fonts.packages = with pkgs; [
