@@ -207,7 +207,7 @@
 						csm = "commit -s -m";
 						cm = "commit -m";
 					};
-					userEmail = "jakub.jira@turbonext.com";
+					userEmail = "jakub.jira@turbonext.ai";
 					userName = "Jakub Jíra";
 					
 				};
