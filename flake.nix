@@ -260,6 +260,10 @@
 					enable = true;
 					enableZshIntegration = true;
 				};
+				programs.starship = {
+					enable = true;
+					enableZshIntegration = true;
+				};
 			};
 		}	
 		nix-homebrew.darwinModules.nix-homebrew
