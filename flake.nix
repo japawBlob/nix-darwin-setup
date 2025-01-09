@@ -182,6 +182,7 @@
 				programs.home-manager.enable = true;
 				home.sessionPath = [
 					"$PYENV_ROOT/bin"
+					"$HOME/go/bin"
 				];
 				home.sessionVariables = {
 					EDITOR="nvim";
@@ -197,6 +198,9 @@
 					pkgs.pyenv
 					pkgs.eza
 					pkgs.vifm
+					pkgs.go
+					pkgs.lsd
+					pkgs.pandoc
 					(pkgs.python3.withPackages (ppkgs: with ppkgs; [
 						matplotlib 
 						torch
@@ -212,7 +216,7 @@
 					};
 					userEmail = "jakub.jira@turbonext.ai";
 					userName = "Jakub Jíra";
-					
+					extraConfig = {init.defaultBranch = "main";};
 				};
 				programs.ssh = {
 					enable = true;
