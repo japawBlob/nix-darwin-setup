@@ -62,6 +62,9 @@
 			"terraform"
 			"node"
 			"azure-cli"
+			"docker"
+			"colima"
+			"lima"
 		];
 		casks = [
 			"firefox"
