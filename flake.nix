@@ -101,7 +101,7 @@
 	system.defaults.dock.wvous-tr-corner = 1;
 	system.defaults.dock.orientation = "left";
 	system.defaults.dock.show-recents = false;
-	system.defaults.dock.tilesize = 64;
+	system.defaults.dock.tilesize = 50;
 	system.defaults.dock.persistent-apps = [
 		"/System/Applications/Launchpad.app"
 		"/System/Applications/System Settings.app"
