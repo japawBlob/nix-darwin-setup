@@ -85,6 +85,7 @@
 	fonts.packages = with pkgs; [
 		nerd-fonts.jetbrains-mono
 		nerd-fonts.caskaydia-cove
+		google-fonts
 	];
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
