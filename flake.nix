@@ -263,7 +263,7 @@
 					enable = true;
 					shellAliases = {
 						dwrs = "darwin-rebuild switch --flake ~/.config/nix-darwin#tn-macbook";
-						dwe = "vim ~/.config/nix-darwin/";
+						dwe = "nvim ~/.config/nix-darwin/";
 					}; 
 				};
 				programs.zoxide = {
