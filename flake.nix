@@ -80,6 +80,7 @@
 			"onlyoffice"
 			"libreoffice"
 			"vlc"
+			"obs"
 		];
 	};	
 	fonts.packages = with pkgs; [
