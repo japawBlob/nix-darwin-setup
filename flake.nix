@@ -81,6 +81,8 @@
 			"libreoffice"
 			"vlc"
 			"obs"
+			"kdenlive"
+			"marta"
 		];
 	};	
 	fonts.packages = with pkgs; [
