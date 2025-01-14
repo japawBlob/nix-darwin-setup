@@ -256,6 +256,8 @@
 						config.window_decorations = "RESIZE"
 						config.initial_cols = 160
 						config.initial_rows = 48
+						config.font_size = 18
+						config.audible_bell = "Disabled"
 						return config
 					'';
 				};
