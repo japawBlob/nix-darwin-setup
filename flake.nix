@@ -82,7 +82,11 @@
 			"vlc"
 			"obs"
 			"kdenlive"
-			"marta"
+			"gimp"
+			"balenaetcher"
+			"chromium"
+			"sol"
+			"discord"
 		];
 	};	
 	fonts.packages = with pkgs; [
@@ -210,6 +214,7 @@
 						torch
 						pytest
 					]))
+					pkgs.nnn
 				];
 				
 				programs.git = {
