@@ -257,7 +257,7 @@
 						local config = wezterm.config_builder()
 						config.font = wezterm.font("CaskaydiaCove Nerd Font")
 						config.front_end = "WebGpu"
-						config.color_scheme = 'Dark Pastel (Gogh)'
+						config.color_scheme = 'Catppuccin Mocha' 
 						config.window_decorations = "RESIZE"
 						config.initial_cols = 160
 						config.initial_rows = 48
