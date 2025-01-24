@@ -55,6 +55,8 @@
 		masApps = {};
 		taps = [
 			"hashicorp/tap"
+			"nikitabobko/tap"
+			"FelixKratz/formulae"
 		];
 		brews = [
 			"mas"
@@ -64,6 +66,7 @@
 			"docker"
 			"colima"
 			"lima"
+			"borders"
 		];
 		casks = [
 			"firefox"
@@ -86,6 +89,7 @@
 			"chromium"
 			"sol"
 			"discord"
+			"aerospace"
 			"wezterm"
 		];
 	};	
@@ -110,6 +114,7 @@
 	system.defaults.dock.orientation = "left";
 	system.defaults.dock.show-recents = false;
 	system.defaults.dock.tilesize = 50;
+	system.defaults.dock.mru-spaces = false;
 	system.defaults.dock.persistent-apps = [
 		"/System/Applications/Launchpad.app"
 		"/System/Applications/System Settings.app"
@@ -129,6 +134,7 @@
 	system.defaults.finder._FXShowPosixPathInTitle = true;
 	system.defaults.finder._FXSortFoldersFirst = true;
 	system.defaults.loginwindow.GuestEnabled = false;
+	system.defaults.spaces.spans-displays = true;
 	system.defaults.NSGlobalDomain = {
 		ApplePressAndHoldEnabled = false;
 		InitialKeyRepeat = 14;
