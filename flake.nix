@@ -207,7 +207,6 @@
 					pkgs.ripgrep
 					pkgs.fzf
 					pkgs.wget
-					pkgs.neovim
 					pkgs.btop
 					pkgs.pyenv
 					pkgs.eza
@@ -282,6 +281,7 @@
 					shellAliases = {
 						dwrs = "darwin-rebuild switch --flake ~/.config/nix-darwin#tn-macbook";
 						dwe = "nvim ~/.config/nix-darwin/";
+						mvim = "nvim";
 					}; 
 				};
 				programs.zoxide = {
@@ -291,6 +291,12 @@
 				programs.starship = {
 					enable = true;
 					enableZshIntegration = true;
+				};
+				programs.neovim = {
+					enable = true;
+					viAlias = true;
+					vimAlias = true;
+					vimdiffAlias = true;
 				};
 			};
 		}	
