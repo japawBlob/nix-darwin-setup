@@ -225,18 +225,19 @@
 					".config/wezterm/wezterm.lua" = {
 						enable = true;
 						text = ''
-						local wezterm = require 'wezterm'
-						local config = wezterm.config_builder()
-						config.font = wezterm.font("CaskaydiaCove Nerd Font")
-						config.front_end = "WebGpu"
-						config.color_scheme = 'Catppuccin Mocha' 
-						config.window_decorations = "RESIZE"
-						config.hide_tab_bar_if_only_one_tab = true
-						config.initial_cols = 160
-						config.initial_rows = 48
-						config.font_size = 18
-						config.audible_bell = "Disabled"
-						return config
+local wezterm = require 'wezterm'
+local config = wezterm.config_builder()
+config.font = wezterm.font("CaskaydiaCove Nerd Font")
+config.front_end = "WebGpu"
+config.window_close_confirmation = 'NeverPrompt'
+config.color_scheme = 'Catppuccin Mocha' 
+config.window_decorations = "RESIZE"
+config.hide_tab_bar_if_only_one_tab = true
+config.initial_cols = 160
+config.initial_rows = 48
+config.font_size = 18
+config.audible_bell = "Disabled"
+return config
 						'';
 					};
 				};
