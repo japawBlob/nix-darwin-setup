@@ -281,6 +281,7 @@
 					shellAliases = {
 						dwrs = "darwin-rebuild switch --flake ~/.config/nix-darwin#tn-macbook";
 						dwe = "nvim ~/.config/nix-darwin/";
+						ls = "eza --icons=always -x --sort type";
 						mvim = "nvim";
 					}; 
 				};
