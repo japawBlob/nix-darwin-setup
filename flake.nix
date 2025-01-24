@@ -28,7 +28,6 @@
 	  pkgs.slack
   	  pkgs.coreutils
 	  pkgs.vscode
-	  pkgs.wezterm
         ];
 	environment.systemPath = [
 		"/opt/homebrew/bin"
@@ -87,6 +86,7 @@
 			"chromium"
 			"sol"
 			"discord"
+			"wezterm"
 		];
 	};	
 	fonts.packages = with pkgs; [
@@ -113,7 +113,7 @@
 	system.defaults.dock.persistent-apps = [
 		"/System/Applications/Launchpad.app"
 		"/System/Applications/System Settings.app"
-		"${pkgs.wezterm}/Applications/WezTerm.app"
+		"/Applications/WezTerm.app"
 		"/Applications/Firefox.app"
 		"/Applications/Messenger.app"
 		"${pkgs.vscode}/Applications/Visual Studio Code.app"
@@ -216,6 +216,25 @@
 					]))
 					pkgs.nnn
 				];
+				home.file = {
+					".config/wezterm/wezterm.lua" = {
+						enable = true;
+						text = ''
+						local wezterm = require 'wezterm'
+						local config = wezterm.config_builder()
+						config.font = wezterm.font("CaskaydiaCove Nerd Font")
+						config.front_end = "WebGpu"
+						config.color_scheme = 'Catppuccin Mocha' 
+						config.window_decorations = "RESIZE"
+						config.hide_tab_bar_if_only_one_tab = true
+						config.initial_cols = 160
+						config.initial_rows = 48
+						config.font_size = 18
+						config.audible_bell = "Disabled"
+						return config
+						'';
+					};
+				};
 				
 				programs.git = {
 					enable = true;
@@ -248,23 +267,6 @@
 							youtube-nonstop
 						];
 					};
-				};
-				programs.wezterm = {
-					enable = true;
-					enableZshIntegration = true;
-					extraConfig = ''
-						local wezterm = require 'wezterm'
-						local config = wezterm.config_builder()
-						config.font = wezterm.font("CaskaydiaCove Nerd Font")
-						config.front_end = "WebGpu"
-						config.color_scheme = 'Catppuccin Mocha' 
-						config.window_decorations = "RESIZE"
-						config.initial_cols = 160
-						config.initial_rows = 48
-						config.font_size = 18
-						config.audible_bell = "Disabled"
-						return config
-					'';
 				};
 				programs.lazygit = {
 					enable = true;
