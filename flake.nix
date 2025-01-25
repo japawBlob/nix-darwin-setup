@@ -301,6 +301,15 @@ return config
 				programs.starship = {
 					enable = true;
 					enableZshIntegration = true;
+					settings = {
+						add_newline = false;
+						directory = {
+							truncation_length = 8;	
+							truncate_to_repo = true;
+							truncation_symbol = "../";
+							style = "bold blue";
+						};
+					};
 				};
 				programs.neovim = {
 					enable = true;
