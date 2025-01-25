@@ -8,13 +8,14 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";	
+    catppuccin.url = "github:catppuccin/nix";
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, firefox-addons}:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, firefox-addons, catppuccin}:
   let
     configuration = { pkgs, config,... }: {
       # List packages installed in system profile. To search by name, run:
@@ -190,6 +191,13 @@
 			home-manager.useUserPackages = true;
 			home-manager.backupFileExtension = "nix-backup";
 			home-manager.users.japaw = {config, pkgs, ...}:{
+				imports = [
+					catppuccin.homeManagerModules.catppuccin
+				];
+				catppuccin = {
+					enable = true;
+					flavor = "mocha";
+				};
 				home.username = "japaw";
 				home.homeDirectory = "/Users/japaw";
 				home.stateVersion = "24.05";
@@ -299,6 +307,11 @@ return config
 					viAlias = true;
 					vimAlias = true;
 					vimdiffAlias = true;
+					extraConfig = ''
+						set termguicolors
+						set rnu
+						colorscheme catppuccin-mocha
+					'';
 				};
 			};
 		}	
