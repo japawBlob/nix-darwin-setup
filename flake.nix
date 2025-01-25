@@ -26,7 +26,6 @@
         [ 
 	  pkgs.vim
 	  pkgs.mkalias
-	  pkgs.slack
   	  pkgs.coreutils
 	  pkgs.vscode
         ];
@@ -92,6 +91,7 @@
 			"discord"
 			"aerospace"
 			"wezterm"
+			"slack"
 		];
 	};	
 	fonts.packages = with pkgs; [
@@ -124,7 +124,7 @@
 		"/Applications/Messenger.app"
 		"${pkgs.vscode}/Applications/Visual Studio Code.app"
 		"/Applications/Microsoft Teams.app"	
-		"${pkgs.slack}/Applications/Slack.app"
+		"/Applications/Slack.app"
 		"/Applications/Simplenote.app"
 	];
 	system.defaults.finder.CreateDesktop = false;
