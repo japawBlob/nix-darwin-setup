@@ -245,6 +245,52 @@ config.initial_cols = 160
 config.initial_rows = 48
 config.font_size = 18
 config.audible_bell = "Disabled"
+config.use_fancy_tab_bar = false;
+-- build your config according to
+-- https://wezfurlong.org/wezterm/config/lua/wezterm/config_builder.html
+
+-- the plugin is currently made for Catppuccin only
+
+-- then finally apply the plugin
+-- these are currently the defaults:
+wezterm.plugin.require("https://github.com/japawBlob/wezterm-bar").apply_to_config(config, {
+  position = "top",
+  max_width = 16,
+  dividers = false, -- or "slant_right", "slant_left", "arrows", "rounded", false
+  indicator = {
+    leader = {
+      enabled = false,
+      off = " ",
+      on = " ",
+    },
+    mode = {
+      enabled = false,
+      names = {
+        resize_mode = "RESIZE",
+        copy_mode = "VISUAL",
+        search_mode = "SEARCH",
+      },
+    },
+  },
+  tabs = {
+    numerals = "arabic", -- or "roman"
+    pane_count = "superscript", -- or "subscript", false
+    brackets = {
+      active = { "", ":" },
+      inactive = { "", ":" },
+    },
+    colours = {
+    	"#89b4fa",
+    },
+  },
+  clock = { -- note that this overrides the whole set_right_status
+    enabled = true,
+    format = "%H:%M", -- use https://wezfurlong.org/wezterm/config/lua/wezterm.time/Time/format.html
+  },
+})
+config.window_frame = {
+	active_titlebar_bg = '#89b4fa'
+}
 return config
 						'';
 					};
