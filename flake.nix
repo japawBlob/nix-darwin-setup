@@ -13,9 +13,10 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    textfox.url = "github:adriankarlen/textfox";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, firefox-addons, catppuccin}:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, firefox-addons, catppuccin, textfox}:
   let
     configuration = { pkgs, config,... }: {
       # List packages installed in system profile. To search by name, run:
@@ -193,10 +194,32 @@
 			home-manager.users.japaw = {config, pkgs, ...}:{
 				imports = [
 					catppuccin.homeManagerModules.catppuccin
+					textfox.homeManagerModules.default
 				];
 				catppuccin = {
 					enable = true;
 					flavor = "mocha";
+				};
+				textfox = {
+					enable = false;
+					profile = "japaw";
+					config = {
+						displayHorizontalTabs = true;
+						displayWindowControls = false;
+						displayNavButtons = false;
+						displayUrlbarIcons = false;
+						displaySidebarTools = false;
+						displayTitles = false;
+						newtabLogo = "   __            __  ____          \A   / /____  _  __/ /_/ __/___  _  __\A  / __/ _ \\| |/_/ __/ /_/ __ \\| |/_/\A / /_/  __/>  </ /_/ __/ /_/ />  <  \A \\__/\\___/_/|_|\\__/_/  \\____/_/|_|  ";
+						font = { 
+						  family = "Fira Code";
+						  size = "15px";
+						  accent = "#654321";
+						};
+						sidebery = {
+						  margin = "0.5rem";
+						};
+					      };
 				};
 				home.username = "japaw";
 				home.homeDirectory = "/Users/japaw";
