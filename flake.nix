@@ -8,6 +8,31 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";	
+    hashicorp-tap = {
+      url = "github:hashicorp/homebrew-tap";
+      flake = false;
+    };
+    nikitabobko-tap = {
+      url = "github:nikitabobko/homebrew-tap";
+      flake = false;
+    };
+    felixkratz-tap = {
+      url = "github:felixkratz/homebrew-formulae";
+      flake = false;
+    };
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
+
     catppuccin.url = "github:catppuccin/nix";
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -16,7 +41,7 @@
     textfox.url = "github:adriankarlen/textfox";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, firefox-addons, catppuccin, textfox}:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, firefox-addons, catppuccin, textfox, homebrew-core, homebrew-cask, homebrew-bundle, hashicorp-tap, nikitabobko-tap, felixkratz-tap}:
   let
     configuration = { pkgs, config,... }: {
       # List packages installed in system profile. To search by name, run:
@@ -50,14 +75,17 @@
 		caskArgs.no_quarantine = true;
 		global.brewfile = true;
 		global.autoUpdate = false;
-		onActivation.upgrade = true;
+		onActivation.upgrade = false;
 		onActivation.autoUpdate = true;
-		onActivation.cleanup = "zap";
+		onActivation.cleanup = "uninstall";
 		masApps = {};
 		taps = [
 			"hashicorp/tap"
 			"nikitabobko/tap"
 			"FelixKratz/formulae"
+			"homebrew/homebrew-core"
+			"homebrew/homebrew-cask"
+			"homebrew/homebrew-bundle"
 		];
 		brews = [
 			"mas"
@@ -80,7 +108,7 @@
 			"proton-mail"
 			"karabiner-elements"
 			"hammerspoon"
-			"onlyoffice"
+			#"onlyoffice"
 			"libreoffice"
 			"vlc"
 			"obs"
@@ -118,15 +146,15 @@
 	system.defaults.dock.tilesize = 50;
 	system.defaults.dock.mru-spaces = false;
 	system.defaults.dock.persistent-apps = [
-		"/System/Applications/Launchpad.app"
-		"/System/Applications/System Settings.app"
-		"/Applications/WezTerm.app"
-		"/Applications/Firefox.app"
-		"/Applications/Messenger.app"
-		"${pkgs.vscode}/Applications/Visual Studio Code.app"
-		"/Applications/Microsoft Teams.app"	
-		"/Applications/Slack.app"
-		"/Applications/Simplenote.app"
+ 		"/System/Applications/Launchpad.app"
+ 		"/System/Applications/System Settings.app"
+ 		"/Applications/WezTerm.app"
+ 		"/Applications/Firefox.app"
+ 		"/Applications/Messenger.app"
+ 		"${pkgs.vscode}/Applications/Visual Studio Code.app"
+ 		"/Applications/Microsoft Teams.app"	
+ 		"/Applications/Slack.app"
+ 		"/Applications/Simplenote.app"
 	];
 	system.defaults.finder.CreateDesktop = false;
 	system.defaults.finder.AppleShowAllExtensions = true;
@@ -403,6 +431,15 @@ return config
 				user = "japaw";
 
 				autoMigrate = true;
+				taps = {
+					"homebrew/homebrew-core" = homebrew-core;
+				      	"homebrew/homebrew-cask" = homebrew-cask;
+				      	"homebrew/homebrew-bundle" = homebrew-bundle;
+					"hashicorp/tap" = hashicorp-tap;
+					"nikitabobko/tap" = nikitabobko-tap;
+					"FelixKratz/formulae" = felixkratz-tap;
+				};
+				mutableTaps = true;
 			};
 		}
 	];
