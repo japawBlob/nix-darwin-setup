@@ -300,7 +300,8 @@ config.initial_cols = 160
 config.initial_rows = 48
 config.font_size = 18
 config.audible_bell = "Disabled"
-config.use_fancy_tab_bar = false;
+config.use_fancy_tab_bar = false
+config.scrollback_lines = 12000
 -- build your config according to
 -- https://wezfurlong.org/wezterm/config/lua/wezterm/config_builder.html
 
