@@ -96,6 +96,7 @@
 			"colima"
 			"lima"
 			"borders"
+			"sketchybar"
 		];
 		casks = [
 			"firefox"
@@ -121,11 +122,13 @@
 			"aerospace"
 			"wezterm"
 			"slack"
+			"zed"
 		];
 	};	
 	fonts.packages = with pkgs; [
 		nerd-fonts.jetbrains-mono
 		nerd-fonts.caskaydia-cove
+		nerd-fonts.hack
 		google-fonts
 	];
       # Enable alternative shell support in nix-darwin.
@@ -279,6 +282,7 @@
 						pytest
 					]))
 					pkgs.nnn
+					pkgs.gh
 				];
 				home.file = {
 					".config/wezterm/wezterm.lua" = {
