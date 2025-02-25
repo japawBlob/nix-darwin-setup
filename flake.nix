@@ -390,6 +390,9 @@ return config
 						dwrs = "darwin-rebuild switch --flake ~/.config/nix-darwin#tn-macbook";
 						dwe = "nvim ~/.config/nix-darwin/";
 						ls = "eza --icons=always -x --sort type";
+						la = "eza --icons=always -x --sort type -la";
+						lst = "eza --icons=always -x --sort type --tree";
+						cd = "z";
 						mvim = "nvim";
 					}; 
 				};
@@ -417,7 +420,8 @@ return config
 					vimdiffAlias = true;
 					extraConfig = ''
 						set termguicolors
-						set rnu
+						set number
+						set relativenumber
 						colorscheme catppuccin-mocha
 					'';
 				};
