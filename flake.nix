@@ -58,8 +58,6 @@
 	environment.systemPath = [
 		"/opt/homebrew/bin"
 	];
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
       # nix.package = pkgs.nix;
 	users.users.japaw = {
 	name = "japaw";
@@ -129,7 +127,6 @@
 		nerd-fonts.jetbrains-mono
 		nerd-fonts.caskaydia-cove
 		nerd-fonts.hack
-		google-fonts
 	];
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
@@ -235,7 +232,10 @@
 					enable = false;
 					profile = "japaw";
 					config = {
-						displayHorizontalTabs = true;
+						tabs = {
+						  vertical.margin = "0.5rem";
+						  horizontal.enable = true;
+						};
 						displayWindowControls = false;
 						displayNavButtons = false;
 						displayUrlbarIcons = false;
@@ -246,9 +246,6 @@
 						  family = "Fira Code";
 						  size = "15px";
 						  accent = "#654321";
-						};
-						sidebery = {
-						  margin = "0.5rem";
 						};
 					      };
 				};
