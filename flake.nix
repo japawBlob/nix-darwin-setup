@@ -120,6 +120,7 @@
 			"aerospace"
 			"wezterm"
 			"slack"
+			"raspberry-pi-imager"
 			"zed"
 		];
 	};	
@@ -277,9 +278,11 @@
 						matplotlib 
 						torch
 						pytest
+						mkdocs
 					]))
 					pkgs.nnn
 					pkgs.gh
+					pkgs.imagemagick
 				];
 				home.file = {
 					".config/wezterm/wezterm.lua" = {
