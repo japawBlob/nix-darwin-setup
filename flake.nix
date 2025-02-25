@@ -172,6 +172,7 @@
 		KeyRepeat = 1;
 		AppleTemperatureUnit = "Celsius";
 		NSWindowShouldDragOnGesture = true;
+		_HIHideMenuBar = false;
 		"com.apple.mouse.tapBehavior" = 1;
 		"com.apple.keyboard.fnState" = true;
 		"com.apple.swipescrolldirection" = false;
