@@ -72,8 +72,8 @@
 		enable = true;
 		caskArgs.no_quarantine = true;
 		global.brewfile = true;
-		global.autoUpdate = false;
-		onActivation.upgrade = false;
+		global.autoUpdate = true;
+		onActivation.upgrade = true;
 		onActivation.autoUpdate = true;
 		onActivation.cleanup = "uninstall";
 		masApps = {};
@@ -95,6 +95,7 @@
 			"lima"
 			"borders"
 			"sketchybar"
+			"tldr"
 		];
 		casks = [
 			"firefox"
@@ -122,6 +123,7 @@
 			"slack"
 			"raspberry-pi-imager"
 			"zed"
+			"floorp"
 		];
 	};	
 	fonts.packages = with pkgs; [
