@@ -139,7 +139,7 @@
 	system.defaults.trackpad.ActuationStrength = 0;
 	system.defaults.dock.autohide = true;
 	system.defaults.dock.autohide-delay = 0.0;
-	system.defaults.dock.autohide-time-modifier = 0.3;
+	system.defaults.dock.autohide-time-modifier = 9999999.0;
 	system.defaults.dock.wvous-bl-corner = 1;
 	system.defaults.dock.wvous-br-corner = 1;
 	system.defaults.dock.wvous-tl-corner = 1;
