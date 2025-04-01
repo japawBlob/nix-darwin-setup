@@ -180,7 +180,7 @@
 		"com.apple.swipescrolldirection" = false;
 		"com.apple.trackpad.scaling" = 2.0;
 	};
-	security.pam.enableSudoTouchIdAuth = true;
+	security.pam.services.sudo_local.touchIdAuth = true;
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
@@ -377,7 +377,7 @@ return config
 					package = null;
 					profiles.japaw = {
 						isDefault = true;
-						extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+						extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
 							ublock-origin
 							bitwarden
 							vimium
