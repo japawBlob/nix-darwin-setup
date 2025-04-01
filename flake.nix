@@ -225,7 +225,7 @@
 			home-manager.backupFileExtension = "nix-backup";
 			home-manager.users.japaw = {config, pkgs, ...}:{
 				imports = [
-					catppuccin.homeManagerModules.catppuccin
+					catppuccin.homeModules.catppuccin
 					textfox.homeManagerModules.default
 				];
 				catppuccin = {
