@@ -96,6 +96,7 @@
 			"borders"
 			"sketchybar"
 			"tldr"
+			"qemu"
 		];
 		casks = [
 			"firefox"
@@ -124,6 +125,7 @@
 			"raspberry-pi-imager"
 			"zed"
 			"floorp"
+			"utm"
 		];
 	};	
 	fonts.packages = with pkgs; [
