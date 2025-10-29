@@ -68,6 +68,7 @@
       nix.settings.experimental-features = "nix-command flakes";
 
 
+	system.primaryUser="japaw";
 	homebrew = {
 		enable = true;
 		caskArgs.no_quarantine = true;
@@ -239,6 +240,7 @@
 				catppuccin = {
 					enable = true;
 					flavor = "mocha";
+					mako.enable = false;
 				};
 				textfox = {
 					enable = false;
