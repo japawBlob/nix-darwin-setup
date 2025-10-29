@@ -154,16 +154,18 @@
 	system.defaults.dock.show-recents = false;
 	system.defaults.dock.tilesize = 50;
 	system.defaults.dock.mru-spaces = false;
+	system.defaults.dock.dashboard-in-overlay = true;
+	system.defaults.dock.mouse-over-hilite-stack = true;
 	system.defaults.dock.persistent-apps = [
- 		"/System/Applications/Launchpad.app"
- 		"/System/Applications/System Settings.app"
- 		"/Applications/WezTerm.app"
- 		"/Applications/Firefox.app"
- 		"/Applications/Messenger.app"
- 		"${pkgs.vscode}/Applications/Visual Studio Code.app"
- 		"/Applications/Microsoft Teams.app"	
- 		"/Applications/Slack.app"
- 		"/Applications/Simplenote.app"
+#  		"/System/Applications/Launchpad.app"
+#  		"/System/Applications/System Settings.app"
+#  		"/Applications/WezTerm.app"
+#  		"/Applications/Firefox.app"
+#  		"/Applications/Messenger.app"
+#  		"${pkgs.vscode}/Applications/Visual Studio Code.app"
+#  		"/Applications/Microsoft Teams.app"
+#  		"/Applications/Slack.app"
+#  		"/Applications/Simplenote.app"
 	];
 	system.defaults.finder.CreateDesktop = false;
 	system.defaults.finder.AppleShowAllExtensions = true;
