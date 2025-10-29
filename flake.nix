@@ -369,13 +369,17 @@ return config
 				
 				programs.git = {
 					enable = true;
-					aliases = {
-						csm = "commit -s -m";
-						cm = "commit -m";
+					settings = {
+						init.defaultBranch = "main";
+						aliases = {
+							csm = "commit -s -m";
+							cm = "commit -m";
+						};
+						user = {
+							email = "jakub.jira@turbonext.ai";
+							name = "Jakub Jíra";
+						};
 					};
-					userEmail = "jakub.jira@turbonext.ai";
-					userName = "Jakub Jíra";
-					extraConfig = {init.defaultBranch = "main";};
 				};
 				programs.ssh = {
 					enable = true;
