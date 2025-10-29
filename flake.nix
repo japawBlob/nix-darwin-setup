@@ -91,12 +91,11 @@
 			"node"
 			"azure-cli"
 			"docker"
+			"docker-compose"
 			"colima"
 			"lima"
 			"borders"
 			"sketchybar"
-			"tldr"
-			"qemu"
 		];
 		casks = [
 			"firefox"
@@ -126,6 +125,11 @@
 			"zed"
 			"floorp"
 			"utm"
+			"nvidia-nsight-systems"
+			"mullvadvpn"
+			"google-cloud-sdk"
+			"masscode"
+			"localsend"
 		];
 	};	
 	fonts.packages = with pkgs; [
@@ -288,6 +292,12 @@
 					pkgs.nnn
 					pkgs.gh
 					pkgs.imagemagick
+					pkgs.tldr
+					pkgs.yt-dlp
+					pkgs.sshpass
+					pkgs.cargo
+					pkgs.signal-desktop-bin
+					pkgs.rclone
 				];
 				home.file = {
 					".config/wezterm/wezterm.lua" = {
