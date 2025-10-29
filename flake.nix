@@ -387,8 +387,11 @@ return config
 				programs.firefox = {
 					enable = true;					
 					package = null;
+					profiles.default.extensions.force = true;
+					profiles.default.id = 1;
 					profiles.japaw = {
 						isDefault = true;
+						extensions.force = true;
 						extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
 							ublock-origin
 							bitwarden
