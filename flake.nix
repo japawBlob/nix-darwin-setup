@@ -175,15 +175,15 @@
           system.defaults.dock.dashboard-in-overlay = true;
           system.defaults.dock.mouse-over-hilite-stack = true;
           system.defaults.dock.persistent-apps = [
-            #  		"/System/Applications/Launchpad.app"
-            #  		"/System/Applications/System Settings.app"
-            #  		"/Applications/WezTerm.app"
-            #  		"/Applications/Firefox.app"
-            #  		"/Applications/Messenger.app"
-            #  		"${pkgs.vscode}/Applications/Visual Studio Code.app"
-            #  		"/Applications/Microsoft Teams.app"
-            #  		"/Applications/Slack.app"
-            #  		"/Applications/Simplenote.app"
+            #  "/System/Applications/Launchpad.app"
+            #  "/System/Applications/System Settings.app"
+            #  "/Applications/WezTerm.app"
+            #  "/Applications/Firefox.app"
+            #  "/Applications/Messenger.app"
+            #  "${pkgs.vscode}/Applications/Visual Studio Code.app"
+            #  "/Applications/Microsoft Teams.app"
+            #  "/Applications/Slack.app"
+            #  "/Applications/Simplenote.app"
           ];
           system.defaults.finder.CreateDesktop = false;
           system.defaults.finder.AppleShowAllExtensions = true;
@@ -225,17 +225,18 @@
               };
             in
             pkgs.lib.mkForce ''
-                		# Set up applications.
-                		echo "setting up /Applications..." >&2
-                		rm -rf /Applications/Nix\ Apps
-                		mkdir -p /Applications/Nix\ Apps
-                		find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-                		while read -r src; do
-                  		app_name=$(basename "$src")
-                  		echo "copying $src" >&2
-                  		${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-                		done
-              	'';
+                    # Set up applications.
+                    echo "setting up /Applications..." >&2
+                    rm -rf /Applications/Nix\ Apps
+                    mkdir -p /Applications/Nix\ Apps
+                    find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+                    while read -r src; do
+                    app_name=$(basename "$src")
+                    echo "copying $src" >&2
+                    ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+                    done
+              '';
+
         };
     in
     {
@@ -295,6 +296,7 @@
                   pkgs.cargo
                   pkgs.signal-desktop-bin
                   pkgs.rclone
+                  pkgs.drawio
                 ];
                 home.file = {
                   ".config/wezterm/wezterm.lua" = {
@@ -348,7 +350,7 @@
                                                   inactive = { "", ":" },
                                                 },
                                                 colours = {
-                                                	"#89b4fa",
+                                                    "#89b4fa",
                                                 },
                                               },
                                               clock = { -- note that this overrides the whole set_right_status
@@ -357,10 +359,10 @@
                                               },
                                             })
                                             config.window_frame = {
-                                            	active_titlebar_bg = '#89b4fa'
+                                                active_titlebar_bg = '#89b4fa'
                                             }
                                             return config
-                      		    '';
+                          '';
                   };
                 };
 
@@ -442,31 +444,35 @@
                   viAlias = true;
                   vimAlias = true;
                   vimdiffAlias = true;
-                  init.lua = ''
-                    		    vim.opt.termguicolors = true
-                    		    vim.opt.number = true
-                    		    vim.opt.relativenumber = false
+                  initLua = ''
+                    vim.opt.termguicolors = true
+                    vim.opt.number = true
+                    vim.opt.relativenumber = true
 
-                    		    vim.cmd.colorscheme("catppuccin-mocha")
+                    vim.cmd.colorscheme("catppuccin-mocha")
 
-                                    vim.opt.list = true
-                                    
-                                    -- What whitespace should look like
-                                    vim.opt.listchars = {
-                                      tab = "»·",
-                                      trail = "·",
-                                      nbsp = "␣",
-                                      extends = "⟩",
-                                      precedes = "⟨",
-                                    }
-                                    
-                                    -- Optional: hide ~ at EOF
-                                    vim.opt.fillchars:append({ eob = " " })
-                                    
-                                    -- Make whitespace color visible (Catppuccin-friendly)
-                                    vim.api.nvim_set_hl(0, "Whitespace", { fg = "#6c7086" })
-                                    vim.api.nvim_set_hl(0, "NonText", { fg = "#6c7086" })
-                    		  '';
+                    vim.opt.list = true
+
+                    vim.opt.tabstop = 4
+                    vim.opt.shiftwidth = 4
+                    vim.opt.expandtab = true
+
+                    -- What whitespace should look like
+                    vim.opt.listchars = {
+                      tab = "»·",
+                      trail = "·",
+                      nbsp = "␣",
+                      extends = "⟩",
+                      precedes = "⟨",
+                    }
+
+                    -- Optional: hide ~ at EOF
+                    vim.opt.fillchars:append({ eob = " " })
+
+                    -- Make whitespace color visible (Catppuccin-friendly)
+                    vim.api.nvim_set_hl(0, "Whitespace", { fg = "#6c7086" })
+                    vim.api.nvim_set_hl(0, "NonText", { fg = "#6c7086" })
+                  '';
                 };
               };
           }
