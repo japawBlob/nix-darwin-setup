@@ -7,37 +7,37 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    hashicorp-tap = {
-      url = "github:hashicorp/homebrew-tap";
-      flake = false;
-    };
-    nikitabobko-tap = {
-      url = "github:nikitabobko/homebrew-tap";
-      flake = false;
-    };
-    felixkratz-tap = {
-      url = "github:felixkratz/homebrew-formulae";
-      flake = false;
-    };
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
-      flake = false;
-    };
-    homebrew-bundle = {
-      url = "github:homebrew/homebrew-bundle";
-      flake = false;
-    };
+    # nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    # hashicorp-tap = {
+    #   url = "github:hashicorp/homebrew-tap";
+    #   flake = false;
+    # };
+    # nikitabobko-tap = {
+    #   url = "github:nikitabobko/homebrew-tap";
+    #   flake = false;
+    # };
+    # felixkratz-tap = {
+    #   url = "github:felixkratz/homebrew-formulae";
+    #   flake = false;
+    # };
+    # homebrew-core = {
+    #   url = "github:homebrew/homebrew-core";
+    #   flake = false;
+    # };
+    # homebrew-cask = {
+    #   url = "github:homebrew/homebrew-cask";
+    #   flake = false;
+    # };
+    # homebrew-bundle = {
+    #   url = "github:homebrew/homebrew-bundle";
+    #   flake = false;
+    # };
 
     catppuccin.url = "github:catppuccin/nix";
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #firefox-addons = {
+    #  url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs =
@@ -46,15 +46,15 @@
       nix-darwin,
       nixpkgs,
       home-manager,
-      nix-homebrew,
-      firefox-addons,
+      #nix-homebrew,
+      #firefox-addons,
       catppuccin,
-      homebrew-core,
-      homebrew-cask,
-      homebrew-bundle,
-      hashicorp-tap,
-      nikitabobko-tap,
-      felixkratz-tap,
+      #homebrew-core,
+      #homebrew-cask,
+      #homebrew-bundle,
+      #hashicorp-tap,
+      #nikitabobko-tap,
+      #felixkratz-tap,
     }:
     let
       configuration =
@@ -83,73 +83,73 @@
           nix.settings.experimental-features = "nix-command flakes";
 
           system.primaryUser = "japaw";
-          homebrew = {
-            enable = true;
-            caskArgs.no_quarantine = true;
-            global.brewfile = true;
-            global.autoUpdate = true;
-            onActivation.upgrade = true;
-            onActivation.autoUpdate = true;
-            onActivation.cleanup = "uninstall";
-            masApps = { };
-            taps = [
-              "hashicorp/tap"
-              "nikitabobko/tap"
-              "FelixKratz/formulae"
-              "homebrew/homebrew-core"
-              "homebrew/homebrew-cask"
-              "homebrew/homebrew-bundle"
-              "tldev/tap"
-            ];
-            brews = [
-              "mas"
-              "terraform"
-              "azure-cli"
-              "docker"
-              "docker-compose"
-              "docker-buildx"
-              "colima"
-              "lima"
-              "borders"
-              "sketchybar"
-              "node@24"
-            ];
-            casks = [
-              "firefox"
-              "maccy"
-              "github"
-              "simplenote"
-              "prusaslicer"
-              "whatsapp"
-              "proton-drive"
-              "proton-mail"
-              "karabiner-elements"
-              "hammerspoon"
-              #"onlyoffice"
-              "libreoffice"
-              "vlc"
-              "obs"
-              "kdenlive"
-              "gimp"
-              "balenaetcher"
-              "chromium"
-              "sol"
-              "discord"
-              "aerospace"
-              "wezterm"
-              "slack"
-              "zed"
-              "floorp"
-              "utm"
-              "nvidia-nsight-systems"
-              "mullvad-vpn"
-              "gcloud-cli"
-              "masscode"
-              "localsend"
-              "raspberry-pi-imager"
-              "posturr"
-            ];
-          };
+          #homebrew = {
+          #  enable = false;
+          #  # caskArgs.no_quarantine = true;
+          #  global.brewfile = true;
+          #  global.autoUpdate = true;
+          #  onActivation.upgrade = true;
+          #  onActivation.autoUpdate = true;
+          #  onActivation.cleanup = "none";
+          #  masApps = { };
+          #  taps = [
+          #    "hashicorp/tap"
+          #    "nikitabobko/tap"
+          #    "FelixKratz/formulae"
+          #    "homebrew/homebrew-core"
+          #    "homebrew/homebrew-cask"
+          #    "homebrew/homebrew-bundle"
+          #    "tldev/tap"
+          #  ];
+          #  brews = [
+          #    "mas"
+          #    "terraform"
+          #    "azure-cli"
+          #    "docker"
+          #    "docker-compose"
+          #    "docker-buildx"
+          #    "colima"
+          #    "lima"
+          #    "borders"
+          #    "sketchybar"
+          #    "node@24"
+          #  ];
+          #  casks = [
+          #    "firefox"
+          #    "maccy"
+          #    "github"
+          #    #"simplenote"
+          #    #"prusaslicer"
+          #    "whatsapp"
+          #    "proton-drive"
+          #    "proton-mail"
+          #    "karabiner-elements"
+          #    "hammerspoon"
+          #    #"onlyoffice"
+          #    #"libreoffice"
+          #    "vlc"
+          #    "obs"
+          #    #"kdenlive"
+          #    #"gimp"
+          #    #"balenaetcher"
+          #    "chromium"
+          #    #"sol"
+          #    "discord"
+          #    "aerospace"
+          #    "wezterm"
+          #    "slack"
+          #    "zed"
+          #    "floorp"
+#         #      "utm"
+          #    #"nvidia-nsight-systems"
+          #    "mullvad-vpn"
+          #    #"gcloud-cli"
+          #  #  "masscode"
+          #    "localsend"
+#         #     "raspberry-pi-imager"
+          #    "posturr"
+          #  ];
+          #};
           fonts.packages = with pkgs; [
             nerd-fonts.jetbrains-mono
             nerd-fonts.caskaydia-cove
@@ -258,6 +258,7 @@
                   catppuccin.homeModules.catppuccin
                 ];
                 catppuccin = {
+                  autoEnable = true;
                   enable = true;
                   flavor = "mocha";
                   mako.enable = false;
@@ -269,6 +270,7 @@
                 home.sessionPath = [
                   "$PYENV_ROOT/bin"
                   "$HOME/go/bin"
+                  "$HOME/.mammouth/bin"
                 ];
                 home.sessionVariables = {
                   EDITOR = "nvim";
@@ -293,10 +295,12 @@
                   pkgs.tldr
                   pkgs.yt-dlp
                   pkgs.sshpass
-                  pkgs.cargo
-                  pkgs.signal-desktop-bin
+                  pkgs.signal-desktop
                   pkgs.rclone
-                  pkgs.drawio
+                  pkgs.uv
+                  pkgs.opencode
+                  pkgs.claude-code
+                  pkgs.tmux
                 ];
                 home.file = {
                   ".config/wezterm/wezterm.lua" = {
@@ -383,43 +387,85 @@
                 programs.ssh = {
                   enable = true;
                   enableDefaultConfig = false;
-                  # addKeysToAgent = "yes";
-                  matchBlocks."*" = {
-                    addKeysToAgent = "yes";
+                  settings = {
+                    "*" = {
+                      AddKeysToAgent = "yes";
+                    };
+                    "kingsoft" = {
+                      HostName = "192.168.25.56";
+                      User = "jakubj_slurm";
+                      ForwardAgent = true;
+                      Port = 22;
+                      IdentityFile = "~/.ssh/id_ed25519";
+                    };
+                    "ks-ci2" = {
+                      HostName = "120.131.10.164";
+                      User = "jakubj";
+                      IdentityFile = "~/.ssh/id_ed25519";
+                      ProxyJump = "kingsoft";
+                      ForwardAgent = true;
+                    };
+                    "bastion" = {
+                      HostName = "bastion.dev.turbonext.ai";
+                      ForwardAgent = true;
+                      User = "jakubj";
+                      IdentityFile = "~/.ssh/id_ed25519";
+                    };
+                    "mamba" = {
+                      HostName = "192.168.1.228";
+                      ForwardAgent = true;
+                      User = "localadmin";
+                      IdentityFile = "~/.ssh/id_ed25519";
+                    };
+                    "oren-ishii" = {
+                      HostName = "192.168.1.226";
+                      ForwardAgent = true;
+                      User = "localadmin";
+                      IdentityFile = "~/.ssh/id_ed25519";
+                    };
+                    "vernita" = {
+                      HostName = "192.168.1.224";
+                      ForwardAgent = true;
+                      User = "localadmin";
+                      IdentityFile = "~/.ssh/id_ed25519";
+                    };
                   };
                 };
-                programs.firefox = {
-                  enable = true;
-                  package = null;
-                  profiles.default.extensions.force = true;
-                  profiles.default.id = 1;
-                  profiles.japaw = {
-                    isDefault = true;
-                    extensions.force = true;
-                    extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
-                      ublock-origin
-                      bitwarden
-                      vimium
-                      darkreader
-                      simple-tab-groups
-                      youtube-nonstop
-                    ];
-                  };
-                };
+                #programs.firefox = {
+                #  enable = true;
+                #  package = null;
+                #  profiles.default.extensions.force = true;
+                #  profiles.default.id = 1;
+                #  profiles.japaw = {
+                #    isDefault = true;
+                #    extensions.force = true;
+                #    extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
+                #      ublock-origin
+                #      bitwarden
+                #      vimium
+                #      darkreader
+                #      simple-tab-groups
+                #      youtube-nonstop
+                #    ];
+                #  };
+                #};
                 programs.lazygit = {
                   enable = true;
                 };
                 programs.zsh = {
                   enable = true;
-                  initContent = ''eval "$(/opt/homebrew/bin/brew shellenv)"'';
+                  initContent = ''
+                    eval "$(/opt/homebrew/bin/brew shellenv)"
+                    source ~/.venv/bin/activate
+                  '';
                   shellAliases = {
-                    dwrs = "darwin-rebuild switch --flake ~/.config/nix-darwin#tn-macbook";
+                    dwrs = "sudo darwin-rebuild switch --flake ~/.config/nix-darwin#tn-macbook";
                     dwe = "nvim ~/.config/nix-darwin/";
                     ls = "eza --icons=always -x --sort type";
                     la = "eza --icons=always -x --sort type -la";
                     lst = "eza --icons=always -x --sort type --tree";
                     cd = "z";
-                    mvim = "nvim";
+                    vim = "nvim";
                   };
                 };
                 programs.zoxide = {
@@ -441,6 +487,8 @@
                 };
                 programs.neovim = {
                   enable = true;
+                  withPython3 = true;
+                  withRuby = false;
                   viAlias = true;
                   vimAlias = true;
                   vimdiffAlias = true;
@@ -476,27 +524,27 @@
                 };
               };
           }
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              # Apple Silicon Only
-              enableRosetta = true;
-              # User owning the Homebrew prefix
-              user = "japaw";
+          # nix-homebrew.darwinModules.nix-homebrew
+          # {
+          #  nix-homebrew = {
+          #    enable = false;
+          #    # Apple Silicon Only
+          #    enableRosetta = true;
+          #    # User owning the Homebrew prefix
+          #    user = "japaw";
 
-              autoMigrate = true;
-              taps = {
-                "homebrew/homebrew-core" = homebrew-core;
-                "homebrew/homebrew-cask" = homebrew-cask;
-                "homebrew/homebrew-bundle" = homebrew-bundle;
-                "hashicorp/tap" = hashicorp-tap;
-                "nikitabobko/tap" = nikitabobko-tap;
-                "FelixKratz/formulae" = felixkratz-tap;
-              };
-              mutableTaps = true;
-            };
-          }
+          #    autoMigrate = true;
+          #    taps = {
+          #      "homebrew/homebrew-core" = homebrew-core;
+          #      "homebrew/homebrew-cask" = homebrew-cask;
+          #      "homebrew/homebrew-bundle" = homebrew-bundle;
+          #      "hashicorp/tap" = hashicorp-tap;
+          #      "nikitabobko/tap" = nikitabobko-tap;
+          #      "FelixKratz/formulae" = felixkratz-tap;
+          #    };
+          #    mutableTaps = true;
+          #  };
+          #}
         ];
       };
 
